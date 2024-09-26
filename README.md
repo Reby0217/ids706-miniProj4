@@ -1,38 +1,53 @@
-# IDS706 Individual Project #1: Continuous Integration using Gitlab Actions of Python Data Science Project
-#### [Click Here to Watch the Demo Video on YouTube](https://youtu.be/gAqFlWD23B0)
+# IDS706 Gitlab/Github Actions Matrix Build for Multiple Python Versions
+
 
 ## Continuous Integration with GitHub Actions
-[![Install](https://github.com/Reby0217/ids706-indvidual1/actions/workflows/install.yml/badge.svg)](https://github.com/Reby0217/ids706-indvidual1/actions/workflows/install.yml)
-[![Lint](https://github.com/Reby0217/ids706-indvidual1/actions/workflows/lint.yml/badge.svg)](https://github.com/Reby0217/ids706-indvidual1/actions/workflows/lint.yml)
-[![Format](https://github.com/Reby0217/ids706-indvidual1/actions/workflows/format.yml/badge.svg)](https://github.com/Reby0217/ids706-indvidual1/actions/workflows/format.yml)
-[![Tests](https://github.com/Reby0217/ids706-indvidual1/actions/workflows/test.yml/badge.svg)](https://github.com/Reby0217/ids706-indvidual1/actions/workflows/test.yml)
+[![Install](https://github.com/Reby0217/ids706-miniProj4/actions/workflows/install.yml/badge.svg)](https://github.com/Reby0217/ids706-miniProj4/actions/workflows/install.yml)
+[![Lint](https://github.com/Reby0217/ids706-miniProj4/actions/workflows/lint.yml/badge.svg)](https://github.com/Reby0217/ids706-miniProj4/actions/workflows/lint.yml)
+[![Format](https://github.com/Reby0217/ids706-miniProj4/actions/workflows/format.yml/badge.svg)](https://github.com/Reby0217/ids706-miniProj4/actions/workflows/format.yml)
+[![Tests](https://github.com/Reby0217/ids706-miniProj4/actions/workflows/test.yml/badge.svg)](https://github.com/Reby0217/ids706-miniProj4/actions/workflows/test.yml)
 
-This project demonstrates the implementation of Continuous Integration (CI) using GitHub Actions for a Python-based Data Science project. It focuses on automating testing, code formatting, linting, and dependency management. The project performs descriptive statistics analysis using a dataset of the 1000 wealthiest people globally.
+
+This project focuses on implementing a GitHub Actions matrix build to test the code across 4 Python versions (`3.7`, `3.8`, `3.9`, `3.11`). It automates testing, formatting, linting, and dependency management, ensuring code compatibility across multiple environments. The project also includes descriptive statistical analysis using a dataset of the 1000 wealthiest people globally.
+
+--- 
+
+
+## Deliverables
+- **Link to successful GitHub Actions Matrix run**: You can view a successful matrix build run [here](https://github.com/Reby0217/ids706-miniProj4/actions/workflows/test.yml).
 
 ---
 
 
-
 ## Project Structure
+.
+├── data
+│   └── Top_1000_wealthiest_people.csv # Dataset with information on the wealthiest people
+├── src
+│   ├── cli.py                         # Script for descriptive statistics and data analysis
+│   └── lib.py                         # Library with reusable functions for data processing
+├── tests
+│   ├── test_lib.py                    # Unit tests for the library functions
+│   └── test_script.py                 # Unit tests for the CLI script
+├── requirements.txt                   # Project dependencies
+├── Makefile                           # Commands for install, setup, test, lint and format
+└── screenshots                        # Images for README visualization
 
-- **Jupyter Notebook** (`src/individual_proj_1.ipynb`):
-  - Performs descriptive statistical analysis using Pandas.
-  - Tested using the `nbval` plugin for `pytest`.
-  
-- **Python Script** (`src/cli.py`):
-  - Reads the dataset, computes descriptive statistics, and groups the data by industry.
-  
-- **Shared Library** (`src/lib.py`):
-  - Contains reusable functions for data validation, reading data, calculating descriptive statistics, plotting, and calculating skewness/kurtosis.
 
-- **Test Scripts**:
-  - `tests/test_lib.py`: Contains unit tests for the shared library functions.
-  - `tests/test_script.py`: Contains tests for the CLI functions.
-  
-- **Dataset** (`src/Top_1000_wealthiest_people.csv`):
-  - A CSV file containing data about the 1000 wealthiest people, including their name, country, industry, net worth (in billions), and company.
-  - **Dataset source**: [Top 1000 Wealthiest People in the World - Kaggle](https://www.kaggle.com/datasets/muhammadehsan02/top-1000-wealthiest-people-in-the-world)
+## GitHub Actions CI/CD Workflow
 
+The project is configured to run GitHub Actions workflows to automate various tasks such as testing, linting, and formatting.
+
+### Matrix Build for Python Versions
+
+The `test.yml` workflow is configured to test the codebase across **4** different Python versions: `3.7`, `3.8`, `3.9`, and `3.11`. This matrix strategy ensures the compatibility and correctness of the code in multiple Python environments:
+
+
+```yaml
+strategy:
+  matrix:
+    python-version: ['3.7', '3.8', '3.9', '3.11']
+```
 
 ## Makefile
 
@@ -67,7 +82,7 @@ The project uses a `Makefile` to streamline development tasks, including testing
 
 ### Prerequisites
 
-- Python 3.9+
+- Python 3.7+
 - `pip` for managing dependencies
 
 ### Installation
@@ -75,8 +90,8 @@ The project uses a `Makefile` to streamline development tasks, including testing
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Reby0217/ids706-indvidual1.git
-   cd ids706-indvidual1
+   git clone https://github.com/Reby0217/ids706-miniProj4.git
+   cd ids706-miniProj4
    ```
 
 2. Create and activate a virtual environment:
