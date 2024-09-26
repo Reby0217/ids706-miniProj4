@@ -16,7 +16,7 @@ This project focuses on implementing a GitHub Actions matrix build to test the c
 ## Deliverables
 - **Link to successful GitHub Actions Matrix run**: You can view a successful matrix build run [here](https://github.com/Reby0217/ids706-miniProj4/actions/workflows/test.yml).
 
-![Actions summary](screenshots/action_summary.png.png)
+![Actions summary](screenshots/action_summary.png)
 
 ---
 
