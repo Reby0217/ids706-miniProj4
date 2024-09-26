@@ -20,6 +20,7 @@ This project focuses on implementing a GitHub Actions matrix build to test the c
 
 
 ## Project Structure
+```bash
 .
 ├── data
 │   └── Top_1000_wealthiest_people.csv # Dataset with information on the wealthiest people
@@ -32,7 +33,7 @@ This project focuses on implementing a GitHub Actions matrix build to test the c
 ├── requirements.txt                   # Project dependencies
 ├── Makefile                           # Commands for install, setup, test, lint and format
 └── screenshots                        # Images for README visualization
-
+```
 
 ## GitHub Actions CI/CD Workflow
 
