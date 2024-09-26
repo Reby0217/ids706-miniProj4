@@ -22,11 +22,11 @@ This project focuses on implementing a GitHub Actions matrix build to test the c
 ## Project Structure
 ```bash
 .
-├── data
-│   └── Top_1000_wealthiest_people.csv # Dataset with information on the wealthiest people
 ├── src
 │   ├── cli.py                         # Script for descriptive statistics and data analysis
 │   └── lib.py                         # Library with reusable functions for data processing
+│   └── Top_1000_wealthiest_people.csv # Dataset with information on the wealthiest people
+│   └── individual_proj_1.ipynb        # Jupyter Notebook for data analysis and visualization
 ├── tests
 │   ├── test_lib.py                    # Unit tests for the library functions
 │   └── test_script.py                 # Unit tests for the CLI script
